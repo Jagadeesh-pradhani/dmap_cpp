@@ -31,11 +31,15 @@ void convertToOccupancyGrid(const Grid_<float>& grid, nav_msgs::OccupancyGrid& o
   occupancy_grid.info.origin.position.y = -grid.rows * resolution / 2;
   occupancy_grid.info.origin.position.z = 0;
   occupancy_grid.info.origin.orientation.w = 1.0;
+  occupancy_grid.info.origin.orientation.x = 0.0;
+  occupancy_grid.info.origin.orientation.y = 0.0;
+  occupancy_grid.info.origin.orientation.z = 0.0;
 
+  // Flip X-axis to correct inversion
   occupancy_grid.data.resize(grid.cols * grid.rows);
   for (int y = 0; y < grid.rows; ++y) {
     for (int x = 0; x < grid.cols; ++x) {
-      int idx = y * grid.cols + x;
+      int idx = y * grid.cols + (grid.cols - 1 - x); // Flip X-axis
       float value = grid(y, x);
       if (value < 0) {
         occupancy_grid.data[idx] = -1; // Unknown
