@@ -110,9 +110,4 @@ The main launch file initializes the following nodes with their corresponding pa
 
 1. Clone the repository and build the workspace:
    ```bash
-   mkdir -p ~/catkin_ws/src
-   cd ~/catkin_ws/src
-   git clone <repository_url>
-   cd ~/catkin_ws
-   catkin_make
-   source devel/setup.bash
+
