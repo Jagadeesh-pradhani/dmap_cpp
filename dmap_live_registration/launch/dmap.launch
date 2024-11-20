@@ -13,7 +13,7 @@
   <node pkg="dmap_live_registration" type="$(arg node)" name="$(arg node)" output="screen" args="/base_scan"/>
 
   <node name="rviz" pkg="rviz" type="rviz" required="true" output="screen"
-            args="-d $(find dmap_live_registration)/config/rviz.rviz" />
+            args="-d $(find dmap_live_registration)/config/rviz2.rviz" />
             
   <node name="teleop" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" output="screen" launch-prefix="xterm -e" />
 
