@@ -109,5 +109,32 @@ The main launch file initializes the following nodes with their corresponding pa
 ## How to Use
 
 1. Clone the repository and build the workspace:
-   ```bash
+# Dependecies
+```bash
+sudo apt install xterm
+```
 
+# Clone
+```bash
+cd
+git clone https://github.com/Jagadeesh-pradhani/dmap_cpp.git
+```
+
+# Build
+```bash
+cd
+mkdir -p dmap_ws/src
+cp -r ~/dmap_cpp/dmap_live_registration/ ~/dmap_ws/src/
+cd ~/dmap_ws/
+rosdep init
+rosdep update
+rosdep install -y --from-paths src --ignore-src -r
+catkin_make
+source ~/dmap_ws/devel/setup.bash
+```
+
+
+#launch
+```bash
+roslaunch dmap_live_registration dmap.launch node:=dmap_show_live_node
+```
