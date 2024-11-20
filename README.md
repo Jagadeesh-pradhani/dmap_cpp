@@ -109,18 +109,18 @@ The main launch file initializes the following nodes with their corresponding pa
 ## How to Use
 
 1. Clone the repository and build the workspace:
-# Dependecies
+### Dependecies
 ```bash
 sudo apt install xterm
 ```
 
-# Clone
+### Clone
 ```bash
 cd
 git clone https://github.com/Jagadeesh-pradhani/dmap_cpp.git
 ```
 
-# Build
+### Build
 ```bash
 cd
 mkdir -p dmap_ws/src
@@ -134,7 +134,7 @@ source ~/dmap_ws/devel/setup.bash
 ```
 
 
-#launch
+### launch
 ```bash
 roslaunch dmap_live_registration dmap.launch node:=dmap_show_live_node
 ```
